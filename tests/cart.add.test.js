@@ -1,11 +1,27 @@
 const Cart = require("../src/cart");
 
-const payload = { id: "1", name: "Item", price: 10 };
-const quantity = 2;
+const item = { id: "SKU1", name: "Item", price: 10 };
 
-test("add() ajoute un article avec quantité", () => {
-  const cart = new Cart();
-  expect(() => cart.add(payload, quantity)).toThrow(
-    "cart.add is not a function"
-  ); // Rouge
+describe("Cart.add", () => {
+  test("Ajoute un nouvel article", () => {
+    const cart = new Cart();
+    cart.add(item, 2);
+    expect(cart.items.size).toBe(1);
+    expect(cart.items.get("SKU1")).toEqual({
+      product: item,
+      quantity: 2,
+    });
+  });
+
+  test("Cumule la quantité si déjà présent", () => {
+    const cart = new Cart();
+    cart.add(item, 1);
+    cart.add(item, 3);
+    expect(cart.items.get("SKU1").quantity).toBe(4);
+  });
+
+  test("Rejette quantité invalide", () => {
+    const cart = new Cart();
+    expect(() => cart.add(item, 0)).toThrow(/quantity/i);
+  });
 });
