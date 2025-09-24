@@ -1,61 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1758705368178" clover="3.2.0">
-  <project timestamp="1758705368178" name="All files">
-    <metrics statements="46" coveredstatements="46" conditionals="36" coveredconditionals="32" methods="13" coveredmethods="13" elements="95" coveredelements="91" complexity="0" loc="46" ncloc="46" packages="1" files="3" classes="3"/>
-    <file name="cart.js" path="C:\dev\3WA\tdd\src\cart.js">
-      <metrics statements="32" coveredstatements="32" conditionals="16" coveredconditionals="12" methods="8" coveredmethods="8"/>
-      <line num="1" count="4" type="stmt"/>
-      <line num="5" count="13" type="stmt"/>
-      <line num="6" count="13" type="stmt"/>
-      <line num="7" count="13" type="stmt"/>
-      <line num="8" count="13" type="stmt"/>
-      <line num="12" count="15" type="cond" truecount="1" falsecount="1"/>
-      <line num="13" count="15" type="cond" truecount="4" falsecount="0"/>
-      <line num="14" count="1" type="stmt"/>
-      <line num="16" count="14" type="stmt"/>
-      <line num="17" count="14" type="stmt"/>
-      <line num="18" count="14" type="cond" truecount="2" falsecount="0"/>
-      <line num="19" count="14" type="stmt"/>
-      <line num="20" count="14" type="stmt"/>
-      <line num="24" count="2" type="cond" truecount="1" falsecount="1"/>
-      <line num="25" count="2" type="cond" truecount="1" falsecount="1"/>
-      <line num="26" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="28" count="1" type="stmt"/>
-      <line num="29" count="1" type="stmt"/>
-      <line num="30" count="1" type="stmt"/>
-      <line num="34" count="1" type="stmt"/>
-      <line num="35" count="1" type="stmt"/>
-      <line num="39" count="7" type="stmt"/>
-      <line num="40" count="7" type="stmt"/>
-      <line num="41" count="6" type="stmt"/>
-      <line num="44" count="7" type="stmt"/>
-      <line num="45" count="7" type="stmt"/>
-      <line num="46" count="7" type="stmt"/>
-      <line num="52" count="7" type="stmt"/>
-      <line num="53" count="7" type="stmt"/>
-      <line num="54" count="8" type="stmt"/>
-      <line num="56" count="7" type="stmt"/>
-      <line num="59" count="4" type="stmt"/>
-    </file>
-    <file name="discounts.js" path="C:\dev\3WA\tdd\src\discounts.js">
-      <metrics statements="9" coveredstatements="9" conditionals="20" coveredconditionals="20" methods="4" coveredmethods="4"/>
-      <line num="2" count="3" type="cond" truecount="1" falsecount="0"/>
-      <line num="3" count="3" type="cond" truecount="4" falsecount="0"/>
-      <line num="4" count="2" type="cond" truecount="4" falsecount="0"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="10" count="3" type="cond" truecount="1" falsecount="0"/>
-      <line num="11" count="3" type="cond" truecount="4" falsecount="0"/>
-      <line num="12" count="2" type="cond" truecount="4" falsecount="0"/>
-      <line num="13" count="1" type="stmt"/>
-      <line num="16" count="1" type="stmt"/>
-    </file>
-    <file name="vat.js" path="C:\dev\3WA\tdd\src\vat.js">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="1" count="4" type="stmt"/>
-      <line num="4" count="8" type="stmt"/>
-      <line num="5" count="8" type="stmt"/>
-      <line num="6" count="8" type="stmt"/>
-      <line num="9" count="4" type="stmt"/>
-    </file>
+<coverage generated="1758709152653" clover="3.2.0">
+  <project timestamp="1758709152653" name="All files">
+    <metrics statements="83" coveredstatements="82" conditionals="52" coveredconditionals="45" methods="24" coveredmethods="23" elements="159" coveredelements="150" complexity="0" loc="83" ncloc="83" packages="2" files="6" classes="6"/>
+    <package name="src">
+      <metrics statements="46" coveredstatements="46" conditionals="36" coveredconditionals="34" methods="13" coveredmethods="13"/>
+      <file name="cart.js" path="C:\dev\3WA\tdd\src\cart.js">
+        <metrics statements="32" coveredstatements="32" conditionals="16" coveredconditionals="14" methods="8" coveredmethods="8"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="5" count="20" type="stmt"/>
+        <line num="6" count="20" type="stmt"/>
+        <line num="7" count="20" type="stmt"/>
+        <line num="8" count="20" type="stmt"/>
+        <line num="12" count="19" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="18" type="cond" truecount="4" falsecount="0"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="16" count="17" type="stmt"/>
+        <line num="17" count="17" type="stmt"/>
+        <line num="18" count="17" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="17" type="stmt"/>
+        <line num="20" count="17" type="stmt"/>
+        <line num="24" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="26" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="39" count="8" type="stmt"/>
+        <line num="40" count="8" type="stmt"/>
+        <line num="41" count="6" type="stmt"/>
+        <line num="44" count="8" type="stmt"/>
+        <line num="45" count="8" type="stmt"/>
+        <line num="46" count="8" type="stmt"/>
+        <line num="52" count="8" type="stmt"/>
+        <line num="53" count="8" type="stmt"/>
+        <line num="54" count="9" type="stmt"/>
+        <line num="56" count="8" type="stmt"/>
+        <line num="59" count="5" type="stmt"/>
+      </file>
+      <file name="discounts.js" path="C:\dev\3WA\tdd\src\discounts.js">
+        <metrics statements="9" coveredstatements="9" conditionals="20" coveredconditionals="20" methods="4" coveredmethods="4"/>
+        <line num="2" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="3" count="3" type="cond" truecount="4" falsecount="0"/>
+        <line num="4" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="10" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="3" type="cond" truecount="4" falsecount="0"/>
+        <line num="12" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+      </file>
+      <file name="vat.js" path="C:\dev\3WA\tdd\src\vat.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="6" count="9" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.services">
+      <metrics statements="37" coveredstatements="36" conditionals="16" coveredconditionals="11" methods="11" coveredmethods="10"/>
+      <file name="cartService.js" path="C:\dev\3WA\tdd\src\services\cartService.js">
+        <metrics statements="25" coveredstatements="25" conditionals="7" coveredconditionals="6" methods="5" coveredmethods="5"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="18" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+      </file>
+      <file name="emailService.js" path="C:\dev\3WA\tdd\src\services\emailService.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+      <file name="inMemoryProductRepo.js" path="C:\dev\3WA\tdd\src\services\inMemoryProductRepo.js">
+        <metrics statements="11" coveredstatements="10" conditionals="9" coveredconditionals="5" methods="5" coveredmethods="5"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="7" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="12" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="20" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

@@ -22,6 +22,11 @@ describe("Cart.add", () => {
 
   test("Rejette quantité invalide", () => {
     const cart = new Cart();
-    expect(() => cart.add(item, 0)).toThrow(/quantity/i);
+    expect(() => cart.add(item, 0)).toThrow("Quantité invalide");
+  });
+
+  test("Rejette produit invalide", () => {
+    const cart = new Cart();
+    expect(() => cart.add({}, 1)).toThrow("Produit invalide");
   });
 });

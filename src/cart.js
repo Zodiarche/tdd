@@ -9,9 +9,9 @@ class Cart {
   }
 
   add(product, quantity = 1) {
-    if (!product?.id) throw new Error("Product id required");
+    if (!product?.id) throw new Error("Produit invalide");
     if (!Number.isInteger(quantity) || quantity <= 0)
-      throw new Error("Quantity invalid");
+      throw new Error("Quantité invalide");
 
     const key = product.id;
     const current = this.items.get(key);
@@ -21,8 +21,8 @@ class Cart {
   }
 
   updateQuantity(productId, quantity) {
-    if (!this.items.has(productId)) throw new Error("Product id unknown");
-    if (!Number.isInteger(quantity)) throw new Error("Quantity invalid");
+    if (!this.items.has(productId)) throw new Error("Produit inconnu");
+    if (!Number.isInteger(quantity)) throw new Error("Quantité invalide");
     if (quantity <= 0) return this.items.delete(productId);
 
     const { product } = this.items.get(productId);

@@ -23,4 +23,9 @@ describe("Cart.updateQuantity", () => {
     cart.remove(item.id);
     expect(cart.items.size).toBe(0);
   });
+
+  test("Rejette quantité invalide", () => {
+    const cart = new Cart();
+    expect(() => cart.updateQuantity({}, -3)).toThrow("Produit inconnu");
+  });
 });
