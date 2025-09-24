@@ -22,7 +22,7 @@ class Cart {
   }
 
   updateQuantity(productId, quantity) {
-    if (!this.items.has(productId)) throw new Error("Produit inconnu");
+    if (!this.items.has(productId)) throw new Error("Produit invalide");
     if (!Number.isInteger(quantity)) throw new Error("Quantité invalide");
     if (quantity <= 0) return this.items.delete(productId);
 

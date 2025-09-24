@@ -9,16 +9,15 @@ class InMemoryProductRepo {
 
   hasStock(id, quantity) {
     const product = this.getById(id);
-    if (!product) throw new Error("Ce produit n'existe pas");
+    if (!product) throw new Error("Produit invalide");
 
     return product.stock >= quantity;
   }
 
   decrement(id, quantity) {
     const product = this.getById(id);
-    if (!product) throw new Error("Ce produit n'existe pas");
-    if (product.stock < quantity)
-      throw new Error("Stock insuffisant pour ce produit");
+    if (!product) throw new Error("Produit invalide");
+    if (product.stock < quantity) throw new Error("Stock insuffisant");
     product.stock -= quantity;
   }
 }

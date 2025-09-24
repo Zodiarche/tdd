@@ -16,7 +16,7 @@ describe("Cart.totals", () => {
   });
 });
 
-describe("computeVAT", () => {
+describe("Calcul de de la TVA et du TTC", () => {
   test("Calculs cohérents", () => {
     const { ht, vat, ttc } = computeVAT(100);
     expect(ht).toBeCloseTo(100);

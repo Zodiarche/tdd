@@ -14,9 +14,7 @@ describe("CartService", () => {
   test("add: Stock insuffisant", () => {
     const repo = new InMemoryProductRepo(seed);
     const service = new CartService(repo, { sendOrderConfirmation: jest.fn() });
-    expect(() => service.add("SKU1", 5)).toThrow(
-      "Stock insuffisant pour ce produit"
-    );
+    expect(() => service.add("SKU1", 5)).toThrow("Stock insuffisant");
   });
 
   test("add: Ajoute un article au panier", () => {
@@ -35,7 +33,7 @@ describe("CartService", () => {
     service.add("SKU1", 2);
     repo.decrement("SKU1", 2);
     await expect(service.checkout(client.email)).rejects.toThrow(
-      "Stock insuffisant pour ce produit"
+      "Stock insuffisant"
     );
   });
 
@@ -51,5 +49,34 @@ describe("CartService", () => {
     expect(repo.getById("SKU1").stock).toBe(1);
     expect(email.sendOrderConfirmation).toHaveBeenCalledTimes(1);
     expect(service.cart.items.size).toBe(0);
+  });
+
+  test("hasStock: Stock insuffisant", () => {
+    const repo = new InMemoryProductRepo(seed);
+
+    expect(repo.hasStock("SKU1", 2)).toBe(true);
+    expect(repo.hasStock("SKU1", 3)).toBe(true);
+    expect(repo.hasStock("SKU1", 4)).toBe(false);
+  });
+
+  test("hasStock: Produit inconnu", () => {
+    const repo = new InMemoryProductRepo(seed);
+    expect(() => repo.hasStock("UNKNOWN", 1)).toThrow("Produit invalide");
+  });
+
+  test("decrement: Stock insuffisant", () => {
+    const repo = new InMemoryProductRepo(seed);
+    expect(() => repo.decrement("SKU1", 5)).toThrow("Stock insuffisant");
+  });
+
+  test("decrement: Produit invalide", () => {
+    const repo = new InMemoryProductRepo(seed);
+    expect(() => repo.decrement("UNKNOWN", 1)).toThrow("Produit invalide");
+  });
+
+  test("decrement: Produit connu et stock suffisant", () => {
+    const repo = new InMemoryProductRepo(seed);
+    repo.decrement("SKU1", 2);
+    expect(repo.getById("SKU1").stock).toBe(1);
   });
 });

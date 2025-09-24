@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Snapshot de la commande 1`] = `
+{
+  "createdAt": "2025-01-01T00:00:00.000Z",
+  "lines": [
+    {
+      "id": "SKU1",
+      "name": "Item",
+      "price": 10,
+      "quantity": 2,
+    },
+  ],
+  "totals": {
+    "discountHT": 0,
+    "ht": 20,
+    "subtotalHT": 20,
+    "ttc": 24,
+    "vat": 4,
+  },
+}
+`;
