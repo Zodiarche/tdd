@@ -1,3 +1,5 @@
+const { computeVAT } = require("./vat");
+
 class Cart {
   constructor() {
     this.items = new Map();
@@ -33,6 +35,25 @@ class Cart {
     this._scheduleRecalc();
   }
 
+  totals(discounts = []) {
+    const subtotalHT = this._computeSubtotal();
+    const discountHT = discounts.reduce(
+      (acc, discount) => acc + discount(subtotalHT),
+      0
+    );
+    const totalHT = Math.max(0, subtotalHT - discountHT);
+    const { ht, vat, ttc } = computeVAT(totalHT);
+    return { subtotalHT, discountHT, ht, vat, ttc };
+  }
+
   _scheduleRecalc() {}
+
+  _computeSubtotal() {
+    let sum = 0;
+    for (const { product, quantity } of this.items.values()) {
+      sum += product.price * quantity;
+    }
+    return sum;
+  }
 }
 module.exports = Cart;
