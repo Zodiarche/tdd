@@ -1,0 +1,16 @@
+{
+  "author": "Benjamin Guillemin",
+  "name": "tdd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "babel-jest": "^30.1.2",
+    "jest": "^30.1.3"
+  }
+}
