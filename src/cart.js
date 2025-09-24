@@ -6,6 +6,7 @@ class Cart {
     this.coupons = [];
     this._totalCache = null;
     this._debounceTimer = null;
+    this._debounceMs = 200;
   }
 
   add(product, quantity = 1) {
@@ -46,7 +47,14 @@ class Cart {
     return { subtotalHT, discountHT, ht, vat, ttc };
   }
 
-  _scheduleRecalc() {}
+  _scheduleRecalc() {
+    this._totalCache = null;
+    if (this._debounceTimer) clearTimeout(this._debounceTimer);
+    this._debounceTimer = setTimeout(
+      () => this._recalculate(),
+      this._debounceMs
+    );
+  }
 
   _computeSubtotal() {
     let sum = 0;
@@ -54,6 +62,10 @@ class Cart {
       sum += product.price * quantity;
     }
     return sum;
+  }
+
+  _recalculate() {
+    this._totalCache = null;
   }
 }
 module.exports = Cart;
